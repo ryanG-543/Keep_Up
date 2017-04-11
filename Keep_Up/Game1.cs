@@ -18,11 +18,13 @@ namespace Keep_Up
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Texture2D background;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
         }
 
         /// <summary>
@@ -44,6 +46,10 @@ namespace Keep_Up
         /// </summary>
         protected override void LoadContent()
         {
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            background = Content.Load<Texture2D>("background");
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -81,7 +87,11 @@ namespace Keep_Up
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            
             GraphicsDevice.Clear(Color.CornflowerBlue);
+            spriteBatch.Begin();
+            spriteBatch.Draw(background, Vector2.Zero, Color.White);
+            spriteBatch.End();
 
             // TODO: Add your drawing code here
 
