@@ -19,6 +19,7 @@ namespace Keep_Up
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D background;
+        Texture2D SpriteSheet;
 
         public Game1()
         {
@@ -49,6 +50,7 @@ namespace Keep_Up
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             background = Content.Load<Texture2D>("background");
+            SpriteSheet = Content.Load<Texture2D>("SpriteSheet");
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
