@@ -10,6 +10,15 @@
       <Output>C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\background.xnb</Output>
       <Time>2017-04-19T11:21:42.7570433-04:00</Time>
     </Item>
+    <Item>
+      <Source>SpriteSheet.png</Source>
+      <Name>SpriteSheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\SpriteSheet.xnb</Output>
+      <Time>2017-04-19T12:13:56.2869712-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{DCCE354F-A2EE-48AF-B5C9-D9284A5FF4F9}</ContentProjectGUID>

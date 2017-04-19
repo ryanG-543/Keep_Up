@@ -31,3 +31,4 @@ C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\obj\x86\De
 C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\obj\x86\Debug\Keep_Up.exe
 C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\obj\x86\Debug\Keep_Up.pdb
 C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\background.xnb
+C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\SpriteSheet.xnb
