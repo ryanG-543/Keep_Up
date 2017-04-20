@@ -20,6 +20,7 @@ namespace Keep_Up
         SpriteBatch spriteBatch;
         Texture2D background;
         Texture2D SpriteSheet;
+        Sprite ball;
 
         public Game1()
         {
@@ -52,6 +53,8 @@ namespace Keep_Up
             background = Content.Load<Texture2D>("background");
             SpriteSheet = Content.Load<Texture2D>("SpriteSheet");
 
+            ball = new Sprite(new Vector2(200, 0), SpriteSheet, new Rectangle(561, 586, 420, 420), new Vector2(0, 50));
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
@@ -79,6 +82,7 @@ namespace Keep_Up
                 this.Exit();
 
             // TODO: Add your update logic here
+            ball.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -93,6 +97,7 @@ namespace Keep_Up
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
+            ball.Draw(spriteBatch);
             spriteBatch.End();
 
             // TODO: Add your drawing code here
