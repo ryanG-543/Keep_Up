@@ -20,7 +20,18 @@ namespace Keep_Up
         SpriteBatch spriteBatch;
         Texture2D background;
         Texture2D SpriteSheet;
+        Texture2D titleScreen;
         Sprite ball;
+
+    
+        enum GameStates
+        {
+            TitleScreen, Playing           
+        }
+        GameStates gameState = GameStates.TitleScreen;
+        SpriteFont pericles14;
+
+        private Vector2 scoreLocation = new Vector2(20, 10);
 
         public Game1()
         {
@@ -49,11 +60,11 @@ namespace Keep_Up
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            titleScreen = Content.Load<Texture2D>("title");
             background = Content.Load<Texture2D>("background");
             SpriteSheet = Content.Load<Texture2D>("SpriteSheet");
 
-            ball = new Sprite(new Vector2(200, 0), SpriteSheet, new Rectangle(561, 586, 420, 420), new Vector2(0, 50));
+            ball = new Sprite(new Vector2(200, 0), SpriteSheet, new Rectangle(805, 808, 219, 204), new Vector2(0, 50));
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -77,6 +88,10 @@ namespace Keep_Up
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
+            GraphicsDevice.Clear(Color.Black);          
+
+    
+
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
@@ -85,6 +100,14 @@ namespace Keep_Up
             ball.Update(gameTime);
 
             base.Update(gameTime);
+
+            MouseState ms = Mouse.GetState();
+
+            Vector2 mousePoint = new Vector2(ms.X, ms.Y);
+            if (ms.LeftButton == ButtonState.Pressed)
+            {
+                
+            }
         }
 
         /// <summary>
@@ -95,6 +118,7 @@ namespace Keep_Up
         {
             
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
             spriteBatch.Begin();
             spriteBatch.Draw(background, Vector2.Zero, Color.White);
             ball.Draw(spriteBatch);
