@@ -31,6 +31,9 @@ namespace Keep_Up
         GameStates gameState = GameStates.TitleScreen;
         SpriteFont pericles14;
 
+        private float titleScreenTimer = 0f;
+        private float titleScreenDelayTime = 1f;
+
         private Vector2 scoreLocation = new Vector2(20, 10);
 
         public Game1()
@@ -49,7 +52,7 @@ namespace Keep_Up
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            this.IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -80,7 +83,8 @@ namespace Keep_Up
         {
             // TODO: Unload any non ContentManager content here
         }
-
+       
+                    
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -98,8 +102,28 @@ namespace Keep_Up
 
             // TODO: Add your update logic here
             ball.Update(gameTime);
-
             base.Update(gameTime);
+           // if (Mouse.IsBoxColliding(ball.BoundingBoxRect))
+            //{
+                switch (gameState)
+            {
+                case GameStates.TitleScreen:
+                    titleScreenTimer +=
+                        (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    if (titleScreenTimer >= titleScreenDelayTime)
+                    {
+                        if ((Keyboard.GetState().IsKeyDown(Keys.Space)) ||
+                            (GamePad.GetState(PlayerIndex.One).Buttons.A ==
+                            ButtonState.Pressed))
+                        {                                                     
+                            gameState = GameStates.Playing;
+                        }
+                    }
+                    break;
+
+            }
+
+           
 
             MouseState ms = Mouse.GetState();
 
@@ -120,8 +144,20 @@ namespace Keep_Up
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
-            ball.Draw(spriteBatch);
+            if (gameState == GameStates.TitleScreen)
+            {
+                spriteBatch.Draw(titleScreen,
+                    new Rectangle(0, 0, this.Window.ClientBounds.Width,
+                        this.Window.ClientBounds.Height),
+                        Color.White);
+            }
+            if ((gameState == GameStates.Playing))
+            {
+                spriteBatch.Draw(background, Vector2.Zero, Color.White);
+                ball.Draw(spriteBatch);
+            }
+
+            
             spriteBatch.End();
 
             // TODO: Add your drawing code here
