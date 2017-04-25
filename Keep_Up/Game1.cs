@@ -20,17 +20,20 @@ namespace Keep_Up
         SpriteBatch spriteBatch;
         Texture2D background;
         Texture2D SpriteSheet;
-        Texture2D titleScreen;
+        Texture2D titleScreen;        
+
         Sprite ball;
 
     
         enum GameStates
         {
-            TitleScreen, Playing           
+            TitleScreen, Playing, gameOver           
         }
         GameStates gameState = GameStates.TitleScreen;
         SpriteFont pericles14;
 
+        private float playerDeathDelayTime = 4f;
+        private float playerDeathTimer = 1f;
         private float titleScreenTimer = 0f;
         private float titleScreenDelayTime = 1f;
 
@@ -118,8 +121,12 @@ namespace Keep_Up
                         {                                                     
                             gameState = GameStates.Playing;
                         }
-                    }
+                    }                                                 
                     break;
+                    playerDeathTimer +=
+                            (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    
+
 
             }
 
