@@ -124,13 +124,8 @@ namespace Keep_Up
                     }                                                 
                     break;
                     playerDeathTimer +=
-                            (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    
-
-
-            }
-
-           
+                            (float)gameTime.ElapsedGameTime.TotalSeconds;                   
+            }        
 
             MouseState ms = Mouse.GetState();
 

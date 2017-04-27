@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\background.xnb</Output>
-      <Time>2017-04-25T09:33:37.1250608-04:00</Time>
+      <Time>2017-04-27T11:20:17.5851378-04:00</Time>
     </Item>
     <Item>
       <Source>SpriteSheet.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\SpriteSheet.xnb</Output>
-      <Time>2017-04-25T09:33:37.1020305-04:00</Time>
+      <Time>2017-04-27T11:20:17.4530898-04:00</Time>
     </Item>
     <Item>
       <Source>title.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\eahscs\Documents\Visual Studio 2015\Projects\Keep_Up\Keep_Up\bin\x86\Debug\Content\title.xnb</Output>
-      <Time>2017-04-25T09:33:37.1470622-04:00</Time>
+      <Time>2017-04-27T11:20:17.6916677-04:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
